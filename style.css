@@ -1,6 +1,20 @@
 :root {
+
+  /* Background color */
   --bg-primary-color: #292626;
+
+  /* bg fill color */
+  --bg-fill-color: #ddae05;
+
+  /* -bg food color */
+  --bg-food-color: #05dd3f;
+
+
+/* text color  */
   --text-primary-color: #d6d6d6;
+
+
+/*  spacing   */
   --spacing-xs: 4px;
   --spacing-sm: 8px;
   --spacing-md: 16px;
@@ -8,6 +22,9 @@
   --spacing-xl: 32px;
   --spacing-2xl: 48px;
   --spacing-3xl: 64px;
+
+
+  /* border colors */
   --border-color: #545252;
 }
 
@@ -56,16 +73,28 @@ section .infos {
   border: 1px solid var(--border-color);
   flex-grow: 1;
   display: grid;
-    overflow: hidden;
+ 
   grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
   grid-template-rows: repeat(auto-fill, minmax(30px, 1fr));
   height: 80vh;
 }
 
+
+
+
 .block {
-    
-  width: 30px;
-  height: 30px;
-  outline: 1px solid var(--border-color);
+
+  outline:  1px solid var(--border-color);
 }
 
+
+
+.fill{
+  background-color: var(--bg-fill-color);
+
+
+}
+
+.food{
+  background-color: var(--bg-food-color);
+}
