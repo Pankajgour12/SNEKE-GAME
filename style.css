@@ -28,6 +28,11 @@
   --border-color: #545252;
 }
 
+/* size of each block (mobile-first) - JS will also read this */
+:root {
+  --block-size: 28px;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -73,18 +78,21 @@ section .infos {
   border: 1px solid var(--border-color);
   flex-grow: 1;
   display: grid;
- 
-  grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
-  grid-template-rows: repeat(auto-fill, minmax(30px, 1fr));
-  height: 80vh;
+  margin: 0 auto;
+  /* width: min(100vmin, 640px);
+  height: min(100vmin, 640px); */
+  touch-action: none;
+
 }
 
 
 
 
 .block {
-
-  outline:  1px solid var(--border-color);
+  outline: 1px solid var(--border-color);
+  background: transparent;
+  width: var(--block-size);
+  height: var(--block-size);
 }
 
 
@@ -97,4 +105,60 @@ section .infos {
 
 .food{
   background-color: var(--bg-food-color);
+}
+
+.head {
+  box-shadow: inset 0 0 0 2px rgba(0,0,0,0.12);
+}
+
+/* Overlay shown on game over */
+.overlay{
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.6);
+  z-index: 1000;
+}
+
+.overlay .panel{
+  background: #1f1f1f;
+  color: var(--text-primary-color);
+  padding: var(--spacing-lg);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  min-width: 220px;
+  text-align: center;
+}
+
+.overlay .btn-restart{
+  margin-top: var(--spacing-md);
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  background: var(--bg-fill-color);
+  color: #111;
+  cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px){
+  :root{ --block-size: 32px; }
+}
+
+@media (min-width: 1200px){
+  :root{ --block-size: 36px; }
+}
+
+/* Speed slider styles */
+.info input[type="range"]{
+  width: 120px;
+  vertical-align: middle;
+}
+.info #speed-value{
+  display: inline-block;
+  width: 28px;
+  text-align: center;
+  margin-left: 8px;
 }
