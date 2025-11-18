@@ -4,7 +4,7 @@
   --bg-primary-color: #292626;
 
   /* bg fill color */
-  --bg-fill-color: #ddae05;
+  --bg-fill-color: #dd3005;
 
   /* -bg food color */
   --bg-food-color: #05dd3f;
@@ -135,6 +135,7 @@ section .infos {
 .overlay .btn-restart{
   margin-top: var(--spacing-md);
   padding: 8px 14px;
+  
   border-radius: 8px;
   border: none;
   background: var(--bg-fill-color);
